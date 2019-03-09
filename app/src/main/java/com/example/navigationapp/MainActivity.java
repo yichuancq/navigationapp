@@ -77,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         // 切换
                         switchFragment(lastFragment, 1);
                         lastFragment = 1;
-
                     }
-
                     return true;
                 }
                 case R.id.navigation_notifications: {
@@ -91,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     return true;
                 }
-
             }
             return false;
             //endregion
