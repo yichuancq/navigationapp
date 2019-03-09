@@ -16,11 +16,9 @@ import java.util.List;
 import java.util.Map;
 
 public class TabBFragment extends Fragment {
-    //绑定GridView布局
+    //listview
     private ListView listView;
-
-    private List<Map> list;
-    private String[] strPerson = {"妹子", "美女", "美美", "大美女", "sdfwefsf", "sdfsd", "sdfsdf", "sdfsf"};
+    private String[] strPerson = {"本地音乐1", "本地音乐2", "本地音乐3", "本地音乐4", "本地音乐5", "本地音乐6", "本地音乐7", "本地音乐8"};
     private int[] iDrawble = {R.drawable.ic_notifications_black_24dp};
 
     public static TabBFragment newInstance(String text) {
@@ -48,13 +46,14 @@ public class TabBFragment extends Fragment {
             Map map = new HashMap();
             map.put("person", strPerson[i]);
             map.put("id", iDrawble[0]);
+            map.put("img", R.mipmap.ic_launcher);
             list.add(map);
         }
         ListAdapter adapter = new SimpleAdapter(this.getActivity(),
                 list,
                 android.R.layout.simple_list_item_2,
                 new String[]{"person", "id"},
-                new int[]{android.R.id.text1, android.R.id.text2});
+                new int[]{android.R.id.text1, iDrawble[0]});
         listView.setAdapter(adapter);
         return view;
     }
