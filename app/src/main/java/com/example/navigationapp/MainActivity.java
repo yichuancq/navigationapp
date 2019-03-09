@@ -37,10 +37,8 @@ public class MainActivity extends AppCompatActivity {
         lastFragment = 0;
         getSupportFragmentManager().beginTransaction().replace(R.id.mainView, fragment1).show(fragment1).commit();
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
-
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
-
 
     //切换Fragment
     private void switchFragment(int lastfragment, int index) {
@@ -51,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.show(fragments[index]).commitAllowingStateLoss();
     }
-
-
     /**
      *
      */
