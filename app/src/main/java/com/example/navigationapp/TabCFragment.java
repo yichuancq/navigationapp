@@ -8,6 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class TabCFragment extends Fragment {
+
+    public static TabCFragment newInstance(String text) {
+        TabCFragment fragmentCommon = new TabCFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("text", text);
+        fragmentCommon.setArguments(bundle);
+        return fragmentCommon;
+    }
+
+
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

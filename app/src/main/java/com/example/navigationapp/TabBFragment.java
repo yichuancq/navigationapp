@@ -7,7 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class TabBFragment  extends Fragment {
+public class TabBFragment extends Fragment {
+
+
+    public static TabBFragment newInstance(String text) {
+        TabBFragment fragmentCommon = new TabBFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString("text", text);
+        fragmentCommon.setArguments(bundle);
+        return fragmentCommon;
+    }
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

@@ -16,12 +16,20 @@ import com.astuetz.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 
-public class SubOneActivity extends Fragment implements ViewPager.OnPageChangeListener {
-    public static MainActivity mainActivity;
+public class SubOneActivity extends Fragment {
+
 
     private ViewPager pager;
     private MyPagerAdapter pagerAdapter;
     private PagerSlidingTabStrip pagerSlidingTabStrip;
+
+    public static SubOneActivity newInstance(String text) {
+        SubOneActivity fragmentCommon = new SubOneActivity();
+        Bundle bundle = new Bundle();
+        bundle.putString("text", text);
+        fragmentCommon.setArguments(bundle);
+        return fragmentCommon;
+    }
 
     @Nullable
     @Override
@@ -53,29 +61,16 @@ public class SubOneActivity extends Fragment implements ViewPager.OnPageChangeLi
         fragmentlist.add(tabFragment1);
         fragmentlist.add(tabFragment2);
         fragmentlist.add(tabFragment3);
-        pagerAdapter = new MyPagerAdapter(mainActivity.getSupportFragmentManager(), fragmentlist);
+        //
+        pagerAdapter = new MyPagerAdapter(this.getActivity().getSupportFragmentManager(), fragmentlist);
+//        pagerAdapter = new MyPagerAdapter(this.getFragmentManager(), fragmentlist);
         pager.setAdapter(pagerAdapter);
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 4, getResources().getDisplayMetrics());
         pager.setPageMargin(pageMargin);
         pagerSlidingTabStrip.setViewPager(pager);
-        pagerSlidingTabStrip.setOnPageChangeListener(this);
+//        pagerSlidingTabStrip.setOnPageChangeListener(this);
         return view;
-    }
-
-    @Override
-    public void onPageScrolled(int i, float v, int i1) {
-        //System.out.println("onPageScrolled");
-    }
-
-    @Override
-    public void onPageSelected(int i) {
-//        System.out.println("onPageSelected");
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int i) {
-        // System.out.println("onPageScrollStateChanged");
     }
 
     //MyPagerAdapter要和上面实现的三个Fragment对应起来
