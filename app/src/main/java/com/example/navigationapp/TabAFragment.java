@@ -61,7 +61,7 @@ public class TabAFragment extends Fragment implements TabHost.OnTabChangeListene
         list = new ArrayList<>();
 
         List<Student> stuList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             Student stu = new Student();
             stu.setAge(10 + i);
             stu.setName("name" + i);

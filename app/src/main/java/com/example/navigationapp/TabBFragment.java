@@ -6,20 +6,19 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
+
+import com.example.navigationapp.adapter.MyAdapter;
+import com.example.navigationapp.dto.Student;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class TabBFragment extends Fragment {
-    //listview
     private ListView listView;
-    private String[] strPerson = {"本地音乐1", "本地音乐2", "本地音乐3", "本地音乐4", "本地音乐5", "本地音乐6", "本地音乐7", "本地音乐8"};
-    private int[] iDrawble = {R.drawable.ic_notifications_black_24dp};
+    //自定义BaseAdapter
+    private MyAdapter adapter;
 
     public static TabBFragment newInstance(String text) {
         TabBFragment fragmentCommon = new TabBFragment();
@@ -40,22 +39,29 @@ public class TabBFragment extends Fragment {
         //不同的Activity对应不同的布局
         View view = inflater.inflate(R.layout.fragment_tab2, container, false);
         listView = (ListView) view.findViewById(R.id.listview);
+
+        this.setAdapter(view);
+        return view;
+    }
+
+    /**
+     * @param view
+     */
+    private void setAdapter(View view) {
+        listView = (ListView) view.findViewById(R.id.listview);
         List<Map<String, String>> list = new ArrayList<Map<String, String>>();
         list = new ArrayList<>();
-        for (int i = 0; i < strPerson.length; i++) {
-            Map map = new HashMap();
-            map.put("person", strPerson[i]);
-            map.put("id", iDrawble[0]);
-            map.put("img", R.mipmap.ic_launcher);
-            list.add(map);
+
+        List<Student> stuList = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            Student stu = new Student();
+            stu.setAge(10 + i);
+            stu.setName("name" + i);
+            stu.setPhoto(R.mipmap.ic_launcher);
+            stuList.add(stu);
         }
-        ListAdapter adapter = new SimpleAdapter(this.getActivity(),
-                list,
-                android.R.layout.simple_list_item_2,
-                new String[]{"person", "id"},
-                new int[]{android.R.id.text1, iDrawble[0]});
+        adapter = new MyAdapter(stuList, this.getActivity());
         listView.setAdapter(adapter);
-        return view;
     }
 
 
