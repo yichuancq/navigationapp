@@ -63,13 +63,11 @@ public class SubOneActivity extends Fragment {
         fragmentlist.add(tabFragment3);
         //
         pagerAdapter = new MyPagerAdapter(this.getActivity().getSupportFragmentManager(), fragmentlist);
-//        pagerAdapter = new MyPagerAdapter(this.getFragmentManager(), fragmentlist);
         pager.setAdapter(pagerAdapter);
         final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 4, getResources().getDisplayMetrics());
         pager.setPageMargin(pageMargin);
         pagerSlidingTabStrip.setViewPager(pager);
-//        pagerSlidingTabStrip.setOnPageChangeListener(this);
         return view;
     }
 
