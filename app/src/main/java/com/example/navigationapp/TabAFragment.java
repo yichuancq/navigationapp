@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class TabFragment extends Fragment {
+public class TabAFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

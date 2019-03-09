@@ -16,7 +16,7 @@ import com.astuetz.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 
-public class SubOneActivity extends Fragment {
+public class SubOneActivity extends Fragment implements ViewPager.OnPageChangeListener {
     public static MainActivity mainActivity;
 
     private ViewPager pager;
@@ -46,35 +46,42 @@ public class SubOneActivity extends Fragment {
         pagerSlidingTabStrip.setShouldExpand(true);
         //tab间的分割线
         pagerSlidingTabStrip.setDividerColor(Color.WHITE);
-
-
         //注意，这三个Fragment需要自己实现
-        TabFragment tabFragment1 = new TabFragment();
-        TabFragment tabFragment2 = new TabFragment();
-        TabFragment tabFragment3 = new TabFragment();
-        TabFragment tabFragment4 = new TabFragment();
-        TabFragment tabFragment5 = new TabFragment();
-        TabFragment tabFragment6 = new TabFragment();
-
-
+        TabAFragment tabFragment1 = new TabAFragment();
+        TabBFragment tabFragment2 = new TabBFragment();
+        TabCFragment tabFragment3 = new TabCFragment();
         fragmentlist.add(tabFragment1);
         fragmentlist.add(tabFragment2);
         fragmentlist.add(tabFragment3);
-        fragmentlist.add(tabFragment4);
-        fragmentlist.add(tabFragment5);
-        fragmentlist.add(tabFragment6);
         pagerAdapter = new MyPagerAdapter(mainActivity.getSupportFragmentManager(), fragmentlist);
         pager.setAdapter(pagerAdapter);
-        final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 4, getResources().getDisplayMetrics());
+        final int pageMargin = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                4, getResources().getDisplayMetrics());
         pager.setPageMargin(pageMargin);
         pagerSlidingTabStrip.setViewPager(pager);
+        pagerSlidingTabStrip.setOnPageChangeListener(this);
         return view;
+    }
+
+    @Override
+    public void onPageScrolled(int i, float v, int i1) {
+        //System.out.println("onPageScrolled");
+    }
+
+    @Override
+    public void onPageSelected(int i) {
+//        System.out.println("onPageSelected");
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int i) {
+        // System.out.println("onPageScrollStateChanged");
     }
 
     //MyPagerAdapter要和上面实现的三个Fragment对应起来
     class MyPagerAdapter extends FragmentPagerAdapter {
 
-        private final String[] TITLES = {"标签1", "标签2", "标签3", "标签4", "标签5", "标签6"};
+        private final String[] TITLES = {"标签1", "标签2", "标签3"};
         private ArrayList<Fragment> fragmentlist;
 
         public MyPagerAdapter(FragmentManager fm, ArrayList<Fragment> list) {

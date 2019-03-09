@@ -27,10 +27,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initFragment() {
-        fragment1 = new SubOneActivity();
-        fragment2 = new SubOneActivity();
-        fragment3 = new SubOneActivity();
-        SubOneActivity.mainActivity = this;
+        fragment1 = new TabAFragment();
+        fragment2 = new TabBFragment();
+        fragment3 = new TabCFragment();
+//        SubOneActivity.mainActivity = this;
         mTextMessage = (TextView) findViewById(R.id.message);
         fragments = new Fragment[]{fragment1, fragment2, fragment3};
         lastFragment = 0;
