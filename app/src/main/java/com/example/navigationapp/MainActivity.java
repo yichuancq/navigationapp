@@ -10,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     private BottomNavigationView bottomNavigationView;
     private Fragment fragment1;
     private Fragment fragment2;
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         fragment1 = new SubOneActivity();
         fragment2 = new SubOneActivity();
         fragment3 = new SubOneActivity();
-
+        SubOneActivity.mainActivity = this;
         mTextMessage = (TextView) findViewById(R.id.message);
         fragments = new Fragment[]{fragment1, fragment2, fragment3};
         lastFragment = 0;
@@ -49,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.show(fragments[index]).commitAllowingStateLoss();
     }
+
     /**
      *
      */
