@@ -53,7 +53,8 @@ public class TabBFragment extends Fragment {
         ListAdapter adapter = new SimpleAdapter(this.getActivity(),
                 list,
                 android.R.layout.simple_list_item_2,
-                new String[]{"person", "id"}, new int[]{android.R.id.text1, android.R.id.text2});
+                new String[]{"person", "id"},
+                new int[]{android.R.id.text1, android.R.id.text2});
         listView.setAdapter(adapter);
         return view;
     }

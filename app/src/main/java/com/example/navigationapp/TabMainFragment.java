@@ -19,7 +19,7 @@ public class TabMainFragment extends FragmentActivity {
         setContentView(R.layout.fragment_main);
 
         List<TabViewChild> tabViewChildList = new ArrayList<>();
-        TabViewChild tabViewChild01 = new TabViewChild(R.drawable.ic_home_black_24dp, R.drawable.ic_home_black_24dp, "首页", SubOneActivity.newInstance("首页"));
+        TabViewChild tabViewChild01 = new TabViewChild(R.drawable.ic_home_black_24dp, R.drawable.ic_home_black_24dp, "首页", TabAFragment.newInstance("首页"));
         TabViewChild tabViewChild02 = new TabViewChild(R.drawable.ic_notifications_black_24dp, R.drawable.ic_notifications_black_24dp, "分类", TabBFragment.newInstance("分类"));
         TabViewChild tabViewChild03 = new TabViewChild(R.drawable.ic_dashboard_black_24dp, R.drawable.ic_dashboard_black_24dp, "资讯", TabCFragment.newInstance("资讯"));
         tabViewChildList.add(tabViewChild01);
