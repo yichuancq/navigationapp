@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class TabBFragment extends Fragment {
-
-
     public static TabBFragment newInstance(String text) {
         TabBFragment fragmentCommon = new TabBFragment();
         Bundle bundle = new Bundle();
@@ -17,7 +15,6 @@ public class TabBFragment extends Fragment {
         fragmentCommon.setArguments(bundle);
         return fragmentCommon;
     }
-
 
     @Nullable
     @Override
