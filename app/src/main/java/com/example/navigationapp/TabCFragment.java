@@ -17,10 +17,6 @@ public class TabCFragment extends Fragment {
         return fragmentCommon;
     }
 
-
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
