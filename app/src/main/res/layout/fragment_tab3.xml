@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     tools:context=".TabFragment">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:text="tab3"
-        tools:ignore="MissingConstraints" />
+    <ListView
+        android:id="@+id/listview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:divider="@color/black" />
 </FrameLayout>
