@@ -9,3 +9,6 @@
   implementation group: 'com.jpardogo.materialtabstrip', name: 'library', version: '1.1.1'
 
 ![Image text](doc/menu.png)
+
+  adapter显示
+![Image text](doc/adapter.png)
