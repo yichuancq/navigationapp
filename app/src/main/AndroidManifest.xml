@@ -23,12 +23,6 @@
         </activity>
 
         <!--tab1-->
-        <activity
-            android:name=".TabAActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-
 
 
     </application>
